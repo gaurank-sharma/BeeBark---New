@@ -3,26 +3,49 @@
 @tailwind utilities;
 
 @layer base {
+  /* 1. DEFAULT: Light Mode settings */
   html, body {
-    /* Changed 'font-body' to 'font-sans' below */
-    @apply font-sans bg-[#221912] text-[#F3F4F6]; 
+    @apply font-sans transition-colors duration-300;
+    /* Light Mode: White Background, 'Espresso' Text */
+    @apply bg-white text-[#221912]; 
+  }
+
+  /* 2. DARK MODE: Overrides when 'dark' class is present */
+  .dark html, .dark body {
+    /* Dark Mode: 'Espresso' Background, Light Text */
+    @apply bg-[#221912] text-[#F3F4F6]; 
   }
 }
 
-/* Custom Scrollbar for Dark Mode */
+/* --- SCROLLBAR CUSTOMIZATION --- */
+
+/* Base (Light Mode) Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #221912; 
+  @apply bg-gray-100; /* Light track for light mode */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3f3f46; 
-  border-radius: 4px;
+  @apply bg-gray-400 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FDE047; 
+  @apply bg-[#221912]; /* Darken on hover */
+}
+
+/* Dark Mode Scrollbar Overrides */
+/* Only applies when the .dark class wraps the content */
+.dark ::-webkit-scrollbar-track {
+  background: #221912; /* Matches dark body bg */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46; 
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #FDE047; /* Brand yellow on hover */
 }

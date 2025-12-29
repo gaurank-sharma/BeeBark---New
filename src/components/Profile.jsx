@@ -21,7 +21,7 @@ export default function ProfilePage() {
            </div>
         </div>
         
-        <h1 className="text-2xl font-bold">Alex Morgan</h1>
+        <h1 className="text-2xl font-bold">Gaurank Sharma</h1>
         <p className="text-brand-muted">Architect • 250 connections</p>
         
         {/* Profile Tabs */}

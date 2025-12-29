@@ -11,12 +11,19 @@ import ConnectionsPage from './components/Connections';
 import EventsPage from './components/Events';    // NEW
 import MemoriesPage from './components/Memories'; // NEW
 import WalletPage from './components/Wallet';
+import Sidebar from './components/Sidebar'; // Adjust path
+
+import EcommercePage from './pages/Ecommerce';
+import RentAndSellPage from './pages/RentAndSell';
+
 
 function App() {
   return (
       <Layout>
         <Routes>
           <Route path="/" element={<FeedPage />} />
+          <Route path="/ecommerce" element={<EcommercePage />} />
+          <Route path="/rent-sell" element={<RentAndSellPage />} />
           <Route path="/feed" element={<FeedPage />} />
           <Route path="/jobs" element={<JobsPage />} />
           <Route path="/messages" element={<MessagesPage />} />

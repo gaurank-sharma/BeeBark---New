@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
   Home, Briefcase, MessageSquare, User, Users, Calendar, 
-  Layers, Wallet, Image as ImageIcon, ShoppingBag, KeyRound 
+  Layers, Wallet, Image as ImageIcon, ShoppingBag, KeyRound, Hammer, Lightbulb, LifeBuoy, Film
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
@@ -66,8 +66,21 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           <NavLink to="/feed" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
             <Layers size={20} /> Feed
           </NavLink>
+          <NavLink to="/reels" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
+            <Film size={20} /> Reels
+          </NavLink>
+          <NavLink to="/projects" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
+            <Hammer size={20} /> Projects Center
+          </NavLink>
           <NavLink to="/jobs" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
             <Briefcase size={20} /> Jobs
+          </NavLink>
+
+            <NavLink to="/ecommerce" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
+            <ShoppingBag size={20} /> Store
+          </NavLink>
+          <NavLink to="/rent-sell" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
+            <KeyRound size={20} /> Rent & Sell
           </NavLink>
           <NavLink to="/events" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
             <Calendar size={20} /> Events
@@ -75,21 +88,23 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           <NavLink to="/memories" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
             <ImageIcon size={20} /> Memories
           </NavLink>
-
-          {/* --- NEW SECTIONS --- */}
-          <NavLink to="/ecommerce" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
-            <ShoppingBag size={20} /> Ecommerce
-          </NavLink>
-          <NavLink to="/rent-sell" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
-            <KeyRound size={20} /> Rent & Sell
-          </NavLink>
-          {/* -------------------- */}
-
+        
           <NavLink to="/wallet" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
             <Wallet size={20} /> Wallet & Economy
           </NavLink>
-        </nav>
 
+           <div className="pt-4 mt-4 border-t border-gray-100 dark:border-white/5">
+            <NavLink to="/feedback" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
+              <Lightbulb size={20} /> Suggest & Earn
+            </NavLink>
+            <NavLink to="/support" onClick={closeSidebar} className={({ isActive }) => `${baseClass} ${isActive ? activeClass : inactiveClass}`}>
+              <LifeBuoy size={20} /> Help & Support
+            </NavLink>
+          </div>
+     
+        </nav>
+        
+       
         {/* Groups Section */}
         <div className="mb-4 px-4">
           <h3 className="text-xs font-bold uppercase tracking-wider mb-4 text-gray-500 dark:text-gray-600">Groups</h3>
